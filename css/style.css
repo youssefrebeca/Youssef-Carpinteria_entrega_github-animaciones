@@ -1,0 +1,153 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Fanwood Text', serif;
+  background-color: #BFBFBD;
+  
+}
+
+/* GRID */
+.grid-container{
+  width: 90%;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(1 1fr);
+  grid-template-rows: repeat(11 1fr);
+  grid-template-areas:  
+  "h1"
+  "header"
+  "img__1"
+  "txt__1"
+  "img__2"
+  "txt__2"
+  "img__3"
+  "txt__3"
+  "img__4"
+  "txt__4"
+  "footer";
+  
+}
+
+.grid-container .h1,
+.grid-container .header,
+.grid-container .img,
+.grid-container .txt,
+.grid-container .footer{
+  background: #D9D9D9;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.h1{
+  grid-area: h1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  color: #A69989;
+}
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.nav{
+  width: 100%;
+}
+.nav >ul {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: #A69989;
+  font-size: 32px;
+}
+
+/* NOMBRE AREAS GRID */
+
+#img__1{
+  grid-area: img__1;
+}
+#txt__1{
+  grid-area: txt__1;
+}
+#img__2{
+  grid-area: img__2;
+}
+#txt__2{
+  grid-area: txt__2;
+}
+#img__3{
+  grid-area: img__3;
+}
+#txt__3{
+  grid-area: txt__3;
+}
+#img__4{
+  grid-area: img__4;
+}
+#txt__4{
+  grid-area: txt__4;
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+}
+.txt{
+  display: flex;
+  justify-content: center;
+  color: #8f8272;
+}
+
+.footer{
+  grid-area: footer;
+  display: flex;
+  align-content: center;
+  justify-content: right;
+}
+
+
+/* MEDIAS */
+
+
+
+@media screen and (min-width: 768px) {
+  .grid-container{
+    grid-template-areas: 
+  "h1        h1"
+  "header    header"
+  "img__1    txt__1"
+  "img__2    txt__2"
+  "img__3    txt__3"
+  "img__4    txt__4"
+  "footer    footer";
+  }
+  .txt{
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-container{
+    grid-template-areas: 
+    "h1         h1"
+    "header     header"
+    "img__1     img__2"
+    "txt__1     txt__2"
+    "img__3     img__4"
+    "txt__3     txt__4"
+    "footer     footer"
+    ;
+}
+}
